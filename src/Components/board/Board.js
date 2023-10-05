@@ -1,11 +1,11 @@
 import { useState } from 'react';
-
+import '../board/Board.css';
 
 var isplayer1 = true;
 function Square({ value, onSquareClick }) {
     return (
         <button className="square" onClick={onSquareClick}>
-            {value}
+            <p className='XO'>{value}</p>
         </button>
     );
 }
@@ -42,18 +42,18 @@ export default function Board() {
 
     return (
         <>
-            <div>{status}</div>
-            <div >
+            <div className='turn-winner'>{status}</div>
+            <div className='line'>
                 <Square className="board-row" value={squares[0]} onSquareClick={() => handleClick(0)} />
                 <Square className="board-row" value={squares[1]} onSquareClick={() => handleClick(1)} />
                 <Square className="board-row" value={squares[2]} onSquareClick={() => handleClick(2)} />
             </div>
-            <div >
+            <div className='line'>
                 <Square className="board-row" value={squares[3]} onSquareClick={() => handleClick(3)} />
                 <Square className="board-row" value={squares[4]} onSquareClick={() => handleClick(4)} />
                 <Square className="board-row" value={squares[5]} onSquareClick={() => handleClick(5)} />
             </div>
-            <div >
+            <div className='line'>
                 <Square className="board-row" value={squares[6]} onSquareClick={() => handleClick(6)} />
                 <Square className="board-row" value={squares[7]} onSquareClick={() => handleClick(7)} />
                 <Square className="board-row" value={squares[8]} onSquareClick={() => handleClick(8)} />
